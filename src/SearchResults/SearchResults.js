@@ -2,24 +2,27 @@ import React from "react";
 
 function SearchResults(props) {
 
-    console.log(props.data[0])
+    //console.log(props.data[0])
 
-    return (
+    const searchResult = props.data
+    //console.log("props", searchResult)
 
-        props.data.map(searchResult => {
-            return (
-
-                <li className="list-group-item d-flex justify-content-between align-items-start">
-                    <div className="ms-2 me-auto">
-                        <div className="fw-bold"><a href={searchResult.url} target="_blank"> {searchResult.title} </a></div>
-                        {searchResult.description}
-                    </div>
-                    <span className="badge bg-primary rounded-pill">Score: {searchResult.boost}</span>
-                </li>
-
-            )
-        })
-    )
+    if (props.data.length !== 0) {
+        return (
+            searchResult[0].response.docs.map(searchResult => {
+                //console.log(searchResult)
+                return (
+                    <li className="list-group-item d-flex justify-content-between align-items-start" key={searchResult.id}>
+                        <div className="ms-2 me-auto">
+                            <div className="fw-bold"><a href={searchResult.url} target="_blank"> {searchResult.title} </a></div>
+                            {searchResult.description}
+                        </div>
+                        <span className="badge bg-primary rounded-pill">Score: {searchResult.boost}</span>
+                    </li>
+                )
+            })
+        )
+    }
 }
 
 export default SearchResults;
