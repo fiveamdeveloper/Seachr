@@ -1,4 +1,9 @@
-/*.badge {
+.badge {
   position: absolute;
   right: 1em;
-}*/
+}
+
+.longUrl {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
