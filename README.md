@@ -1,6 +1,6 @@
 # Searchr - React App
 This React App was part of an university project at DHBW CAS for Advanced Data Mining and Web Mining lecture. The app fetches data from a local Apache Solr instance based on given search parameters.
-![Seachr React App](seachr-react.png)
+![Seachr React App](searchr-react.png)
 
 
 ## Start App
